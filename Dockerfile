@@ -40,7 +40,8 @@ RUN apt-get update && \
 # Create dirs and add the build scripts
 RUN mkdir -p /usr/src/libpq
 ADD libpq.sh /usr/src/libpq/build.sh
-ADD ncurses.sh readline.sh zlib.sh cmake /usr/src/libpq/
+ADD ncurses.sh readline.sh zlib.sh /usr/src/libpq/
+ADD cmake /usr/src/libpq/cmake
 RUN chmod +x /usr/src/libpq/build.sh
 WORKDIR /usr/src/libpq
 
