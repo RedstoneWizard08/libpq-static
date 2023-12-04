@@ -1,0 +1,14 @@
+pq.tgz
+install
+pq
+postgres*
+readline.tgz
+readline
+readline-*
+libpq-install
+zlib
+zlib-*
+ncurses
+ncurses-*
+zlib.tgz
+ncurses.tgz
