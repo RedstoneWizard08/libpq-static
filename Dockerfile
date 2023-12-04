@@ -48,7 +48,7 @@ WORKDIR /usr/src/libpq
 # Build
 ARG POSTGRES_VERSION=15.5
 RUN ./build.sh "${POSTGRES_VERSION}" /usr/src/libpq/install-x86_64 x86_64-linux-gnu
-RUN ./build.sh "${POSTGRES_VERSION}" /usr/src/libpq/install-arm64 aarch64-linux-gnu
+RUN ./build.sh "${POSTGRES_VERSION}" /usr/src/libpq/install-aarch64 aarch64-linux-gnu
 
 # Profit
 WORKDIR /usr/src/libpq/install-x86_64
