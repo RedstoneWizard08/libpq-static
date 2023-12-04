@@ -60,7 +60,7 @@ RUN cp -f "/usr/src/libpq/libpq-$(uname -m).tar.gz" /usr/src/libpq/libpq.tar.gz
 # smol image
 FROM scratch
 
-# Copy the file
+# Copy the files
 COPY --from=builder /usr/src/libpq/libpq.tar.gz /libpq.tar.gz
 COPY --from=builder /usr/src/libpq/libpq-x86_64.tar.gz /libpq-x86_64.tar.gz
 COPY --from=builder /usr/src/libpq/libpq-aarch64.tar.gz /libpq-aarch64.tar.gz
