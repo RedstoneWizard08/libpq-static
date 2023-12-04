@@ -19,7 +19,13 @@ cd ncurses
 
 echo "[2/4] Configuring..."
 
-./configure --enable-static --without-progs --prefix="$PREFIX" --host="$TARGET"
+./configure \
+    --enable-static \
+    --without-progs \
+    --without-tack \
+    --without-tests \
+    --prefix="$PREFIX" \
+    --host="$TARGET"
 
 echo "[3/4] Building..."
 
