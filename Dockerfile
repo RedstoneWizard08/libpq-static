@@ -25,7 +25,8 @@ RUN apk update && \
         libtool \
         linux-headers \
         cmake \
-        ninja
+        ninja \
+        ncurses
 
 # Create dirs and add the build scripts
 RUN mkdir -p /usr/src/libpq
