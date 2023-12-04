@@ -1,32 +1,41 @@
 # Builds libpq statically.
-FROM alpine as builder
+FROM ubuntu:23.04 as builder
+
+ENV TZ=America/Los_Angeles
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install build tools
-RUN apk update && \
-    apk add --no-cache \
-        alpine-sdk \
+RUN apt-get update && \
+    apt-get -y install \
+        build-essential \
         gcc \
         mold \
         clang \
         llvm \
         binutils \
         lld \
+        curl \
         wget \
         tar \
         gzip \
-        readline-dev \
-        readline-static \
-        zlib-dev \
-        zlib-static \
+        libreadline-dev \
+        zlib1g-dev \
         bash \
         sed \
         automake \
         autoconf \
         libtool \
-        linux-headers \
         cmake \
-        ninja \
-        ncurses
+        ninja-build \
+        ncurses-bin \
+        gcc-aarch64-linux-gnu \
+        g++-aarch64-linux-gnu \
+        binutils-aarch64-linux-gnu \
+        gcc-x86-64-linux-gnu \
+        g++-x86-64-linux-gnu \
+        binutils-x86-64-linux-gnu \
+        musl-dev \
+        musl-tools
 
 # Create dirs and add the build scripts
 RUN mkdir -p /usr/src/libpq

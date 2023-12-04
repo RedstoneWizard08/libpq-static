@@ -12,3 +12,4 @@ ncurses
 ncurses-*
 zlib.tgz
 ncurses.tgz
+musl-cross-make
