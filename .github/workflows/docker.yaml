@@ -28,7 +28,6 @@ jobs:
                   context: .
                   file: Dockerfile
                   push: true
-                  platforms: linux/arm64,linux/amd64
                   cache-from: type=gha
                   cache-to: type=gha,mode=max
                   tags: |
